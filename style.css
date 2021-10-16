@@ -32,6 +32,7 @@ body {
    height: 100%;
    display: flex;
    margin-top: 5%;
+   margin-bottom: 5em;
 }
 
 .item {
@@ -55,15 +56,20 @@ transition: all 0.8s ease;
 }
 
 .slider-controls {
-   /* position: absolute; */
-   /* bottom: 60px; */
+   position: absolute;
+   bottom: 0;
    width: 100%;
    display: flex;
    justify-content: center;
    z-index: 50;
-   margin-top: 2%;
+   margin-top: 2em;
 }
 
+.labels {
+   display: flex;
+   flex: 0 1 20%;
+   justify-content: space-between;
+}
 
 .slider-controls .slider-controls-item {
    width: 2em;
@@ -72,8 +78,8 @@ transition: all 0.8s ease;
    /* border: .1em solid black; */
    background-color: rgb(26, 186, 207);
    cursor: pointer;
-   transition: all 0.5s ease;
-   margin: 0 2%;
+   transition: all 0.3s ease-in-out;
+   margin: 0 .3em;
 }
 
 .slider-controls .slider-controls-item:hover {
@@ -143,3 +149,111 @@ transition: all 0.8s ease;
    transition: none;
    background-color: rgb(172, 151, 58);
 }
+
+.text {
+   font-size: 2em;
+   font-weight: 700;
+   text-align: left;
+   flex: 0 1 30%;
+   display: flex;
+   margin-right: 2em;
+}
+
+.container {
+   max-width: 90em;
+   margin: 2em auto;
+}
+
+.text-item {
+   /* flex: 0 0 100%; */
+   display: none;
+   opacity: 1;
+   animation: text_animation 1s  linear;
+}
+
+@keyframes text_animation {
+   0% {
+      opacity: 0;
+   }
+   30% {
+      opacity: 0.3;
+   }
+   80% {
+      opacity: 0.8;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
+
+#c1:checked ~ .slider-controls .text .text-item:nth-child(1) {
+   
+   display: block;
+}
+
+#c2:checked ~ .slider-controls .text .text-item:nth-child(2) {
+   display: block;
+}
+
+#c3:checked ~ .slider-controls .text .text-item:nth-child(3) {
+   display: block;
+}
+
+#c4:checked ~ .slider-controls .text .text-item:nth-child(4) {
+   /* visibility: hidden; */
+   display: block;
+
+}
+
+#c5:checked ~ .slider-controls .text .text-item:nth-child(5) {
+   /* visibility: hidden; */
+   display: block;
+}
+
+@media (max-width: 40em) {
+   .slider-controls {
+      flex-direction: column-reverse;
+   }
+   .labels {      
+         justify-content: center;
+         margin-top: 1%;
+   }
+   .text {
+      justify-content: center;
+      margin-right: 0;
+      margin-top: 1%;
+   }
+   .slider-items {
+      margin-bottom: 6em;
+   }
+}
+
+@media (max-width: 32em) {
+   
+  .labels {      
+   
+}
+  .text {
+   margin-top: .3em;
+}
+.slider-items {
+   margin-bottom: 6em;
+}
+}
+
+@media (max-width: 22em) {
+   
+   .labels {      
+    margin: 0;
+ }
+   .text {
+    margin-top: 1em;
+    font-weight: 400;
+ }
+ 
+ .slider-items {
+   margin-bottom: 10em;
+}
+
+ }
