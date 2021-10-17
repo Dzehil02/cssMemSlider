@@ -76,10 +76,6 @@ transition: all 0.8s ease;
    margin: 0 .3em;
 }
 
-.slider-controls .slider-controls-item::after {
-   
-}
-
 .slider-controls .slider-controls-item:hover {
    background-color: rgb(172, 151, 58);
 }
@@ -260,10 +256,7 @@ transition: all 0.8s ease;
     margin-top: .7em;
     
  }
- 
- .slider-items {
-   
-}
+
 .container {
    margin: 0 auto;
 }
